@@ -8,7 +8,7 @@ class TaxAnnotation extends StatelessWidget {
   /// {@macro tax_annotation}
   const TaxAnnotation({
     super.key,
-    this.isSubscription = false,
+    this.hasSubscription = false,
     this.taxPercentage,
     this.taxType,
     this.beforeLabel = 'Before',
@@ -17,7 +17,7 @@ class TaxAnnotation extends StatelessWidget {
   });
 
   /// This property is used to show SubscriptionAnnotation
-  final bool isSubscription;
+  final bool hasSubscription;
 
   /// This property is used to show tax percentage
   final num? taxPercentage;
@@ -35,7 +35,7 @@ class TaxAnnotation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (taxType != null || isSubscription == true) {
+    if (taxType != null || hasSubscription == true) {
       return ListTile(
         subtitle: Column(
           mainAxisSize: MainAxisSize.min,
@@ -47,7 +47,7 @@ class TaxAnnotation extends StatelessWidget {
               beforeLabel: beforeLabel,
             ),
             _SubscriptionAnnotation(
-              isSubscription: isSubscription,
+              isSubscription: hasSubscription,
               priceApplicableAfterQuotaLabel: priceApplicableAfterQuotaLabel,
             ),
           ],
