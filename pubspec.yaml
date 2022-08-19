@@ -1,6 +1,6 @@
 name: common_widgets_flutter
 description: Common Widget Flutter is a repository that manages common widgets like PageTitle, DateTimePicker
-version: 1.1.0+2
+version: 1.2.0+3
 publish_to: none
 
 environment:
