@@ -9,8 +9,9 @@ class TaxAnnotation extends StatelessWidget {
   const TaxAnnotation({
     super.key,
     this.hasSubscription = false,
+    this.hasTax = false,
     this.taxPercentage,
-    this.taxType,
+    this.taxType = 'tax',
     this.beforeLabel = 'Before',
     this.priceApplicableAfterQuotaLabel =
         'Applicable after monthly subscription quota is exceeded',
@@ -18,6 +19,9 @@ class TaxAnnotation extends StatelessWidget {
 
   /// This property is used to show SubscriptionAnnotation
   final bool hasSubscription;
+
+  /// This property is used to show SubscriptionAnnotation
+  final bool hasTax;
 
   /// This property is used to show tax percentage
   final num? taxPercentage;
@@ -35,7 +39,7 @@ class TaxAnnotation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (taxType != null || hasSubscription == true) {
+    if (hasTax == true || hasSubscription == true) {
       return ListTile(
         subtitle: Column(
           mainAxisSize: MainAxisSize.min,
@@ -45,6 +49,7 @@ class TaxAnnotation extends StatelessWidget {
               taxPercentage: taxPercentage,
               taxType: taxType,
               beforeLabel: beforeLabel,
+              hasTax: hasTax,
             ),
             _SubscriptionAnnotation(
               isSubscription: hasSubscription,
@@ -64,8 +69,10 @@ class _TaxType extends StatelessWidget {
     this.taxPercentage,
     this.taxType,
     required this.beforeLabel,
+    this.hasTax = false,
   });
 
+  final bool? hasTax;
   final num? taxPercentage;
   final String? taxType;
   final String beforeLabel;
@@ -74,17 +81,9 @@ class _TaxType extends StatelessWidget {
   Widget build(BuildContext context) {
     final numberFormat = NumberFormat();
 
-    if (taxType != null) {
-      // return Text(
-      //   '* ${l10n.beforeLabel} ${numberFormat ?? '0'}% ${taxType ?? 'tax'}',
-      //   style: Theme.of(context).textTheme.subtitle1?.copyWith(
-      //         fontStyle: FontStyle.italic,
-      //         fontWeight: FontWeight.w100,
-      //       ),
-      //   textAlign: TextAlign.end,
-      // );
-      return RichText(
-        text: TextSpan(
+    if (hasTax == true) {
+      return Text.rich(
+        TextSpan(
           text: '*  $beforeLabel',
           style: Theme.of(context).textTheme.subtitle1?.copyWith(
                 fontStyle: FontStyle.italic,
