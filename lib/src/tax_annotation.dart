@@ -12,7 +12,7 @@ class TaxAnnotation extends StatelessWidget {
     this.hasTax = false,
     this.taxPercentage,
     this.taxType = 'tax',
-    this.beforeLabel = 'Before',
+    this.prefixLabel = 'Before',
     this.priceApplicableAfterQuotaLabel =
         'Applicable after monthly subscription quota is exceeded',
   });
@@ -32,7 +32,7 @@ class TaxAnnotation extends StatelessWidget {
   final String? taxType;
 
   /// This property is used to show translated label
-  final String beforeLabel;
+  final String prefixLabel;
 
   /// This property is used to show translated label
   final String priceApplicableAfterQuotaLabel;
@@ -48,7 +48,7 @@ class TaxAnnotation extends StatelessWidget {
             _TaxType(
               taxPercentage: taxPercentage,
               taxType: taxType,
-              beforeLabel: beforeLabel,
+              beforeLabel: prefixLabel,
               hasTax: hasTax,
             ),
             _SubscriptionAnnotation(
