@@ -12,7 +12,7 @@ class DateTimePicker extends StatefulWidget {
     this.labelText,
     this.suffixIcon,
     required this.enabled,
-    this.dateOnly,
+    this.dateOnly = false,
     this.initialValue,
     this.firstDate,
     this.validator,
@@ -32,7 +32,7 @@ class DateTimePicker extends StatefulWidget {
 
   /// If [dateOnly] is true then the date picker will only allow user to pick
   /// date
-  final bool? dateOnly;
+  final bool dateOnly;
 
   /// The initial date
   final DateTime? initialValue;

@@ -35,7 +35,7 @@ class DateRangePicker extends StatefulWidget {
   final String? saveText;
 
   /// If the [enabled] is false then the date time button will be disabled
-  final bool? enabled;
+  final bool enabled;
 
   /// Called when the user selects a date time range.
   final void Function(DateTimeRange?) onChanged;

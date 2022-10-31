@@ -27,7 +27,7 @@ class SectionTitle extends StatelessWidget {
       contentPadding: EdgeInsets.zero,
       dense: subtitle == null,
       title: AnimatedDefaultTextStyle(
-        style: Theme.of(context).textTheme.subtitle1!.copyWith(
+        style: Theme.of(context).textTheme.titleMedium!.copyWith(
               color: color ?? Theme.of(context).colorScheme.primary,
               fontWeight: FontWeight.w600,
             ),
