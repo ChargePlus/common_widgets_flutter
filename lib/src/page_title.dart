@@ -22,7 +22,7 @@ class PageTitle extends StatelessWidget {
     return ListTile(
       contentPadding: EdgeInsets.zero,
       title: AnimatedDefaultTextStyle(
-        style: Theme.of(context).textTheme.headline6!,
+        style: Theme.of(context).textTheme.titleLarge!,
         duration: const Duration(milliseconds: 200),
         child: title,
       ),

@@ -14,7 +14,8 @@ class TaxAnnotation extends StatelessWidget {
     this.taxType = 'tax',
     this.prefixLabel = 'Before',
     this.subscriptionQuotaAnnotation =
-        'Above charging fees apply after monthly subscription quota is exceeded',
+        'Above charging fees apply after monthly subscription quota is'
+            ' exceeded',
   });
 
   /// This property is used to show SubscriptionAnnotation
@@ -72,7 +73,7 @@ class _TaxType extends StatelessWidget {
     this.hasTax = false,
   });
 
-  final bool? hasTax;
+  final bool hasTax;
   final num? taxPercentage;
   final String? taxType;
   final String beforeLabel;
@@ -85,7 +86,7 @@ class _TaxType extends StatelessWidget {
       return Text.rich(
         TextSpan(
           text: '*  $beforeLabel',
-          style: Theme.of(context).textTheme.subtitle1?.copyWith(
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.w100,
               ),
@@ -122,7 +123,7 @@ class _SubscriptionAnnotation extends StatelessWidget {
     if (isSubscription) {
       return Text(
         priceApplicableAfterQuotaLabel,
-        style: Theme.of(context).textTheme.subtitle1?.copyWith(
+        style: Theme.of(context).textTheme.titleMedium?.copyWith(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w100,
             ),
