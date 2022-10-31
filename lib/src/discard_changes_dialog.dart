@@ -38,7 +38,7 @@ class DiscardChangesDialog extends StatelessWidget {
       actions: [
         TextButton(
           style: TextButton.styleFrom(
-            foregroundColor: Theme.of(context).textTheme.bodyText2?.color,
+            foregroundColor: Theme.of(context).textTheme.bodyMedium?.color,
           ),
           onPressed: () {
             Navigator.of(context).pop(false);

@@ -30,7 +30,7 @@ class ColouredTag extends StatelessWidget {
       child: AnimatedDefaultTextStyle(
         style: Theme.of(context)
             .textTheme
-            .overline!
+            .labelSmall!
             .copyWith(fontWeight: FontWeight.w600),
         duration: const Duration(milliseconds: 200),
         child: label,
