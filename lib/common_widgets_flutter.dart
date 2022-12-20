@@ -7,7 +7,6 @@ export 'src/coloured_tag.dart';
 export 'src/date_range_picker.dart';
 export 'src/date_time_picker.dart';
 export 'src/discard_changes_dialog.dart';
-export 'src/dropdown_textformfield.dart';
 export 'src/expandable_search.dart';
 export 'src/loader.dart';
 export 'src/models/models.dart';
