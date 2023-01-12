@@ -4,6 +4,7 @@ export 'src/bottom_sheet_handle.dart';
 export 'src/charge_quota_bar_chart.dart';
 export 'src/circular_loader.dart';
 export 'src/coloured_tag.dart';
+export 'src/common_snackbar.dart';
 export 'src/date_range_picker.dart';
 export 'src/date_time_picker.dart';
 export 'src/discard_changes_dialog.dart';
