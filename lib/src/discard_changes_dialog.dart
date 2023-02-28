@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 class DiscardChangesDialog extends StatelessWidget {
   /// {@macro discard_changes_dialog}
   const DiscardChangesDialog({
-    super.key,
     required this.title,
     required this.content,
+    super.key,
     this.cancelButtonLabel = 'Cancel',
     this.discardButtonLabel = 'Discard',
   });

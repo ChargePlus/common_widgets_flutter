@@ -8,16 +8,16 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 class DateTimePicker extends StatefulWidget {
   /// {@macro date_time_picker}
   const DateTimePicker({
+    required this.enabled,
+    required this.onChanged,
+    required this.locale,
     super.key,
     this.labelText,
     this.suffixIcon,
-    required this.enabled,
     this.dateOnly = false,
     this.initialValue,
     this.firstDate,
     this.validator,
-    required this.onChanged,
-    required this.locale,
     this.focusNode,
   });
 

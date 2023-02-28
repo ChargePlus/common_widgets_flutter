@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 class CommonSnackbar extends StatelessWidget {
   /// {@macro common_snackbar}
   const CommonSnackbar({
-    super.key,
     required this.text,
+    super.key,
     this.isLoading = false,
     this.trailing,
   }) : assert(

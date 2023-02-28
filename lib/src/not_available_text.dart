@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 class NotAvailableText extends StatelessWidget {
   /// {@macro not_available_text}
   const NotAvailableText({
-    super.key,
     required this.label,
+    super.key,
   });
 
   /// This property is used for a not available text
