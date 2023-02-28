@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 class DateRangePicker extends StatefulWidget {
   /// {@macro date_range_picker}
   const DateRangePicker({
+    required this.onChanged,
     super.key,
     this.initialDateRange,
     this.decoration,
@@ -15,7 +16,6 @@ class DateRangePicker extends StatefulWidget {
     this.saveText,
     this.enabled = true,
     this.locale,
-    required this.onChanged,
     this.backgroundColor,
   });
 

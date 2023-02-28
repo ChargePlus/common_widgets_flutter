@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 class SectionTitle extends StatelessWidget {
   /// {@macro section_title}
   const SectionTitle({
-    super.key,
     required this.title,
+    super.key,
     this.subtitle,
     this.color,
   });

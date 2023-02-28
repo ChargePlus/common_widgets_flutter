@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 class ColouredTag extends StatelessWidget {
   /// {@macro coloured_tag}
   const ColouredTag({
-    super.key,
     required this.label,
     required this.color,
+    super.key,
   });
 
   /// This property is used for the text in the coloured tag

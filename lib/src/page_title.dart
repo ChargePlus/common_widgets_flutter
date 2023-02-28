@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 class PageTitle extends StatelessWidget {
   /// {@macro page_title}
   const PageTitle({
-    super.key,
     required this.title,
+    super.key,
     this.subtitle,
   });
 

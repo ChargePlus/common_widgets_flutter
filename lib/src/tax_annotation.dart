@@ -67,9 +67,9 @@ class TaxAnnotation extends StatelessWidget {
 
 class _TaxType extends StatelessWidget {
   const _TaxType({
+    required this.beforeLabel,
     this.taxPercentage,
     this.taxType,
-    required this.beforeLabel,
     this.hasTax = false,
   });
 

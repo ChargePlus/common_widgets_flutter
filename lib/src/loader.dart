@@ -7,8 +7,8 @@ import 'package:shimmer/shimmer.dart';
 class Loader extends StatelessWidget {
   /// {@macro loader}
   const Loader({
-    super.key,
     required this.child,
+    super.key,
   });
 
   /// Creates a widget that insets its child.
