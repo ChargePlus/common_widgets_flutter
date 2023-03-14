@@ -41,10 +41,10 @@ class TaxAnnotation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (hasTax == true || hasSubscription == true) {
-      return ListTile(
-        subtitle: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.end,
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             _TaxType(
               taxPercentage: taxPercentage,
