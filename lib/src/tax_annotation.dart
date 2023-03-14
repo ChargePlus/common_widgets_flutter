@@ -41,10 +41,10 @@ class TaxAnnotation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (hasTax == true || hasSubscription == true) {
-      return ListTile(
-        subtitle: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.end,
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             _TaxType(
               taxPercentage: taxPercentage,
@@ -86,9 +86,9 @@ class _TaxType extends StatelessWidget {
       return Text.rich(
         TextSpan(
           text: '*  $beforeLabel',
-          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.w100,
+                color: Theme.of(context).textTheme.bodySmall?.color,
               ),
           children: [
             if (taxPercentage != null)
@@ -102,6 +102,7 @@ class _TaxType extends StatelessWidget {
             ),
           ],
         ),
+        textAlign: TextAlign.end,
       );
     } else {
       return const SizedBox.shrink();
@@ -123,9 +124,9 @@ class _SubscriptionAnnotation extends StatelessWidget {
     if (isSubscription) {
       return Text(
         priceApplicableAfterQuotaLabel,
-        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.w100,
+              color: Theme.of(context).textTheme.bodySmall?.color,
             ),
         textAlign: TextAlign.end,
       );
