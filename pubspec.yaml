@@ -12,7 +12,6 @@ dependencies:
   flutter:
     sdk: flutter
   intl: ^0.18.0
-  jiffy: ^5.0.1
   json_annotation: ^4.8.0
   material_design_icons_flutter: ^6.0.7096
   shimmer: ^2.0.0
