@@ -31,31 +31,34 @@ class ChargeQuotaBarChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      dense: dense,
-      contentPadding: const EdgeInsets.only(
-        left: 16,
-        right: 16,
-        bottom: 8,
-      ),
-      title: title != null
-          ? Padding(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: title,
-            )
-          : title,
-      subtitle: Column(
-        children: [
-          _BarChart(value: barChartValue),
-          const SizedBox(height: 8),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              subtitleLeading ?? const SizedBox.shrink(),
-              subtitleTrailing ?? const SizedBox.shrink(),
-            ],
-          ),
-        ],
+    return MediaQuery(
+      data: const MediaQueryData(),
+      child: ListTile(
+        dense: dense,
+        contentPadding: const EdgeInsets.only(
+          left: 16,
+          right: 16,
+          bottom: 8,
+        ),
+        title: title != null
+            ? Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: title,
+              )
+            : title,
+        subtitle: Column(
+          children: [
+            _BarChart(value: barChartValue),
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                subtitleLeading ?? const SizedBox.shrink(),
+                subtitleTrailing ?? const SizedBox.shrink(),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
