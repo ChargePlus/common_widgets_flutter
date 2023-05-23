@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shimmer/shimmer.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 /// {@template loader}
 /// Apply shimmer effect for any widgets
@@ -8,17 +8,27 @@ class Loader extends StatelessWidget {
   /// {@macro loader}
   const Loader({
     required this.child,
+    this.color,
     super.key,
   });
 
   /// Creates a widget that insets its child.
   final Widget child;
 
+  /// Color of the shimmer effect
+  final Color? color;
+
   @override
   Widget build(BuildContext context) {
-    return Shimmer.fromColors(
-      baseColor: Theme.of(context).dividerColor,
-      highlightColor: Theme.of(context).dividerColor.withOpacity(0.5),
+    return Animate(
+      onPlay: (controller) => controller.repeat(),
+      effects: [
+        ShimmerEffect(
+          duration: 1200.ms,
+          color: color ??
+              Theme.of(context).scaffoldBackgroundColor.withOpacity(0.7),
+        )
+      ],
       child: child,
     );
   }
