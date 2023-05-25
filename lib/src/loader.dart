@@ -23,6 +23,7 @@ class Loader extends StatelessWidget {
     return Animate(
       onPlay: (controller) => controller.repeat(),
       effects: [
+        TintEffect(color: Colors.grey.shade700),
         ShimmerEffect(
           duration: 1200.ms,
           color: color ??
