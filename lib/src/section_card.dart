@@ -106,6 +106,7 @@ class SectionCard extends StatelessWidget {
             ),
             borderRadius: const BorderRadius.all(Radius.circular(12)),
           ),
+          color: Colors.transparent,
           margin: margin,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 16),
