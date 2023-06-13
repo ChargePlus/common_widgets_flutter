@@ -22,6 +22,7 @@ class SectionCard extends StatelessWidget {
     super.key,
     this.margin,
     this.child,
+    this.color,
     this.type = CardType.original,
     this.elevation,
   });
@@ -31,6 +32,9 @@ class SectionCard extends StatelessWidget {
 
   /// This property is used to configure an [Card]'s margin.
   final EdgeInsetsGeometry? margin;
+
+  /// This property is used to configure an [Card]'s background color.
+  final Color? color;
 
   /// This property is used to configure an [Card]'s child.
   final Widget? child;
@@ -52,6 +56,7 @@ class SectionCard extends StatelessWidget {
         return Card(
           margin: margin,
           elevation: elevation,
+          color: color,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 16),
             child: Column(
@@ -74,7 +79,8 @@ class SectionCard extends StatelessWidget {
         );
       case CardType.filled:
         return Card(
-          color: Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.7),
+          color: color ??
+              Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.7),
           elevation: 0,
           margin: margin,
           child: Padding(
@@ -106,7 +112,7 @@ class SectionCard extends StatelessWidget {
             ),
             borderRadius: const BorderRadius.all(Radius.circular(12)),
           ),
-          color: Colors.transparent,
+          color: color ?? Colors.transparent,
           margin: margin,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 16),
