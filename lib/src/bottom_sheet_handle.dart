@@ -9,10 +9,15 @@ class BottomSheetHandle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Divider(
-      indent: MediaQuery.of(context).size.width / 2.5,
-      thickness: 3,
-      endIndent: MediaQuery.of(context).size.width / 2.5,
+    return Container(
+      width: Theme.of(context).bottomSheetTheme.dragHandleSize?.width ?? 32,
+      height: Theme.of(context).bottomSheetTheme.dragHandleSize?.height ?? 4,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(
+          (Theme.of(context).bottomSheetTheme.dragHandleSize?.height ?? 4) / 2,
+        ),
+        color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.4),
+      ),
     );
   }
 }
