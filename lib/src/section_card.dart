@@ -66,7 +66,8 @@ class SectionCard extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
                   child: AnimatedDefaultTextStyle(
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          fontWeight: FontWeight.w200,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                     duration: const Duration(milliseconds: 200),
                     child: Text(title),
@@ -92,7 +93,8 @@ class SectionCard extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
                   child: AnimatedDefaultTextStyle(
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          fontWeight: FontWeight.w200,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                     duration: const Duration(milliseconds: 200),
                     child: Text(title),
@@ -123,7 +125,8 @@ class SectionCard extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
                   child: AnimatedDefaultTextStyle(
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          fontWeight: FontWeight.w200,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                     duration: const Duration(milliseconds: 200),
                     child: Text(title),
