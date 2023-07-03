@@ -134,8 +134,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
           focusNode: widget.focusNode,
           decoration: InputDecoration(
             labelText: widget.labelText,
-            suffixIcon:
-                widget.suffixIcon ?? const Icon(MdiIcons.calendarOutline),
+            suffixIcon: widget.suffixIcon ?? Icon(MdiIcons.calendarOutline),
           ),
         ),
       ),
