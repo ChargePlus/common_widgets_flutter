@@ -12,6 +12,7 @@ export 'src/models/models.dart';
 export 'src/not_available_text.dart';
 export 'src/or_suggestion_divider.dart';
 export 'src/page_title.dart';
+export 'src/scroll_fader.dart';
 export 'src/section_card.dart';
 export 'src/section_title.dart';
 export 'src/tax_annotation.dart';
