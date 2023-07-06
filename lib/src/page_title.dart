@@ -19,17 +19,14 @@ class PageTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MediaQuery(
-      data: const MediaQueryData(),
-      child: ListTile(
-        contentPadding: EdgeInsets.zero,
-        title: AnimatedDefaultTextStyle(
-          style: Theme.of(context).textTheme.titleLarge!,
-          duration: const Duration(milliseconds: 200),
-          child: title,
-        ),
-        subtitle: subtitle,
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      title: AnimatedDefaultTextStyle(
+        style: Theme.of(context).textTheme.titleLarge!,
+        duration: const Duration(milliseconds: 200),
+        child: title,
       ),
+      subtitle: subtitle,
     );
   }
 }
