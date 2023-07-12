@@ -28,7 +28,7 @@ class SectionCard extends StatelessWidget {
   });
 
   /// This property is used to configure an [Card]'s title.
-  final String title;
+  final Widget title;
 
   /// This property is used to configure an [Card]'s margin.
   final EdgeInsetsGeometry? margin;
@@ -69,7 +69,7 @@ class SectionCard extends StatelessWidget {
                           fontWeight: FontWeight.w200,
                         ),
                     duration: const Duration(milliseconds: 200),
-                    child: Text(title),
+                    child: title,
                   ),
                 ),
                 if (child != null) child!,
@@ -95,7 +95,7 @@ class SectionCard extends StatelessWidget {
                           fontWeight: FontWeight.w200,
                         ),
                     duration: const Duration(milliseconds: 200),
-                    child: Text(title),
+                    child: title,
                   ),
                 ),
                 if (child != null) child!,
@@ -126,7 +126,7 @@ class SectionCard extends StatelessWidget {
                           fontWeight: FontWeight.w200,
                         ),
                     duration: const Duration(milliseconds: 200),
-                    child: Text(title),
+                    child: title,
                   ),
                 ),
                 if (child != null) child!,
