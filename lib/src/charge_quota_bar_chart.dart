@@ -70,9 +70,15 @@ class _BarChart extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: const BorderRadius.all(Radius.circular(5)),
-      child: LinearProgressIndicator(
-        minHeight: 10,
-        value: value ?? 0,
+      child: TweenAnimationBuilder<double>(
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.easeInOut,
+        tween: Tween<double>(
+          begin: 0,
+          end: value,
+        ),
+        builder: (context, value, _) =>
+            LinearProgressIndicator(minHeight: 10, value: value),
       ),
     );
   }

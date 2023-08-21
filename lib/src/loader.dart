@@ -28,7 +28,7 @@ class Loader extends StatelessWidget {
           duration: 1200.ms,
           color: color ??
               Theme.of(context).scaffoldBackgroundColor.withOpacity(0.7),
-        )
+        ),
       ],
       child: child,
     );
