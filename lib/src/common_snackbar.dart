@@ -11,6 +11,7 @@ class CommonSnackbar extends StatelessWidget {
     super.key,
     this.isLoading = false,
     this.trailing,
+    this.maxLines = 2,
   }) : assert(
           isLoading ^ (trailing != null),
           'isLoading can either be true, or trailing cannot be null',
@@ -25,6 +26,10 @@ class CommonSnackbar extends StatelessWidget {
   /// Flag to show CircularLoader as trailing
   final bool isLoading;
 
+  /// Max error code lines
+  /// Default 2 max lines
+  final int maxLines;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -36,7 +41,7 @@ class CommonSnackbar extends StatelessWidget {
         Expanded(
           child: Text(
             text,
-            maxLines: 2,
+            maxLines: maxLines,
             overflow: TextOverflow.ellipsis,
           ),
         ),
