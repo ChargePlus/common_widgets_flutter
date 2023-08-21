@@ -53,7 +53,7 @@ class DiscardChangesDialog extends StatelessWidget {
             Navigator.of(context).pop(true);
           },
           child: Text(discardButtonLabel!.toUpperCase()),
-        )
+        ),
       ],
     );
   }
