@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 /// {@template discard_changes_dialog}
 /// An alert dialog for users who tries to navigate away from a form
@@ -20,10 +21,10 @@ class DiscardChangesDialog extends StatelessWidget {
   final String content;
 
   /// This property is used for cancel button label
-  final String? cancelButtonLabel;
+  final String cancelButtonLabel;
 
   /// This property is used for discard button label
-  final String? discardButtonLabel;
+  final String discardButtonLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -41,18 +42,18 @@ class DiscardChangesDialog extends StatelessWidget {
             foregroundColor: Theme.of(context).textTheme.bodyMedium?.color,
           ),
           onPressed: () {
-            Navigator.of(context).pop(false);
+            context.pop(false);
           },
-          child: Text(cancelButtonLabel!.toUpperCase()),
+          child: Text(cancelButtonLabel.toUpperCase()),
         ),
         TextButton(
           style: TextButton.styleFrom(
             foregroundColor: Theme.of(context).colorScheme.error,
           ),
           onPressed: () {
-            Navigator.of(context).pop(true);
+            context.pop(true);
           },
-          child: Text(discardButtonLabel!.toUpperCase()),
+          child: Text(discardButtonLabel.toUpperCase()),
         ),
       ],
     );
