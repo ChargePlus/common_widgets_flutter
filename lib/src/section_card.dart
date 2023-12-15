@@ -25,6 +25,7 @@ class SectionCard extends StatelessWidget {
     this.color,
     this.type = CardType.original,
     this.elevation,
+    this.spacing = 16,
   });
 
   /// This property is used to configure an [Card]'s title.
@@ -49,6 +50,9 @@ class SectionCard extends StatelessWidget {
   /// Only available in [CardType.original]
   final double? elevation;
 
+  /// This property is used to configure an [Card]'s spacing.
+  final double spacing;
+
   @override
   Widget build(BuildContext context) {
     switch (type) {
@@ -58,12 +62,17 @@ class SectionCard extends StatelessWidget {
           elevation: elevation,
           color: color,
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16),
+            padding: EdgeInsets.symmetric(vertical: spacing),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+                  padding: EdgeInsets.fromLTRB(
+                    spacing,
+                    spacing / 2,
+                    spacing,
+                    spacing,
+                  ),
                   child: AnimatedDefaultTextStyle(
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           fontWeight: FontWeight.w200,
@@ -84,12 +93,17 @@ class SectionCard extends StatelessWidget {
           elevation: 0,
           margin: margin,
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16),
+            padding: EdgeInsets.symmetric(vertical: spacing),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+                  padding: EdgeInsets.fromLTRB(
+                    spacing,
+                    spacing / 2,
+                    spacing,
+                    spacing,
+                  ),
                   child: AnimatedDefaultTextStyle(
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           fontWeight: FontWeight.w200,
@@ -115,12 +129,17 @@ class SectionCard extends StatelessWidget {
           color: color ?? Colors.transparent,
           margin: margin,
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16),
+            padding: EdgeInsets.symmetric(vertical: spacing),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+                  padding: EdgeInsets.fromLTRB(
+                    spacing,
+                    spacing / 2,
+                    spacing,
+                    spacing,
+                  ),
                   child: AnimatedDefaultTextStyle(
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           fontWeight: FontWeight.w200,
