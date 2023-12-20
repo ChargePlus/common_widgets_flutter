@@ -49,14 +49,14 @@ class Annotations extends StatelessWidget {
             taxAnnotationTranslation: taxAnnotationTranslation,
             hasTax: hasTax,
           ),
+          _OneTimeFeeAnnotation(
+            hasOneTimeFee: hasOneTimeFee,
+            oneTimeFeeAnnotationTranslation: oneTimeFeeAnnotationTranslation,
+          ),
           _SubscriptionAnnotation(
             hasSubscription: hasSubscription,
             subscriptionAnnotationTranslation:
                 subscriptionAnnotationTranslation,
-          ),
-          _OneTimeFeeAnnotation(
-            hasOneTimeFee: hasOneTimeFee,
-            oneTimeFeeAnnotationTranslation: oneTimeFeeAnnotationTranslation,
           ),
         ],
       );
