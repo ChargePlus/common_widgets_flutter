@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 /// {@endtemplate}
 class TaxAnnotation extends StatelessWidget {
   /// {@macro tax_annotation}
+  @Deprecated('TaxAnnotation is deprecated. Use Annotations instead')
   const TaxAnnotation({
     super.key,
     this.hasSubscription = false,
