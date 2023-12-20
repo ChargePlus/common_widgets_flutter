@@ -1,3 +1,4 @@
+export 'src/annotations.dart';
 export 'src/bottom_sheet_handle.dart';
 export 'src/charge_quota_bar_chart.dart';
 export 'src/circular_loader.dart';
