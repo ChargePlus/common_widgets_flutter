@@ -10,9 +10,11 @@ class Annotations extends StatelessWidget {
     this.hasSubscription = false,
     this.hasTax = false,
     this.hasOneTimeFee = false,
+    this.hasDiscountQuota = false,
     this.taxAnnotationTranslation,
     this.subscriptionAnnotationTranslation,
     this.oneTimeFeeAnnotationTranslation,
+    this.discountQuotaAnnotationTranslation,
   });
 
   /// This property is used to show subscription annotation
@@ -23,6 +25,9 @@ class Annotations extends StatelessWidget {
 
   /// This property is used to show one time fee annotation
   final bool hasOneTimeFee;
+
+  /// This property is used to show plan's discounted quota annotation
+  final bool hasDiscountQuota;
 
   /// This property is used to show translated tax label
   ///
@@ -38,6 +43,9 @@ class Annotations extends StatelessWidget {
   ///
   /// Eg.
   final String? oneTimeFeeAnnotationTranslation;
+
+  /// This property is used to show translated discounted quota label
+  final String? discountQuotaAnnotationTranslation;
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +65,11 @@ class Annotations extends StatelessWidget {
             hasSubscription: hasSubscription,
             subscriptionAnnotationTranslation:
                 subscriptionAnnotationTranslation,
+          ),
+          _DiscountQuotaAnnotation(
+            hasDiscountQuota: hasDiscountQuota,
+            discountQuotaAnnotationTranslation:
+                discountQuotaAnnotationTranslation,
           ),
         ],
       );
@@ -130,6 +143,31 @@ class _OneTimeFeeAnnotation extends StatelessWidget {
     if (hasOneTimeFee) {
       return Text(
         oneTimeFeeAnnotationTranslation ?? '',
+        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              color: Theme.of(context).textTheme.bodySmall?.color,
+            ),
+        textAlign: TextAlign.end,
+      );
+    } else {
+      return const SizedBox.shrink();
+    }
+  }
+}
+
+class _DiscountQuotaAnnotation extends StatelessWidget {
+  const _DiscountQuotaAnnotation({
+    required this.discountQuotaAnnotationTranslation,
+    this.hasDiscountQuota = false,
+  });
+
+  final bool hasDiscountQuota;
+  final String? discountQuotaAnnotationTranslation;
+
+  @override
+  Widget build(BuildContext context) {
+    if (hasDiscountQuota) {
+      return Text(
+        discountQuotaAnnotationTranslation ?? '',
         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Theme.of(context).textTheme.bodySmall?.color,
             ),
