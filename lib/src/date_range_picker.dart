@@ -61,7 +61,7 @@ class _DateRangePickerState extends State<DateRangePicker> {
       firstDate: DateTime(1900),
       lastDate: DateTime.now(),
       saveText: widget.saveText,
-      locale: Localizations.localeOf(context),
+      locale: widget.locale,
       builder: (context, child) {
         return Theme(
           data: Theme.of(context).copyWith(
@@ -116,7 +116,7 @@ class _DateRangePickerState extends State<DateRangePicker> {
 
   @override
   Widget build(BuildContext context) {
-    final dateFormat = DateFormat.yMMMd(widget.locale);
+    final dateFormat = DateFormat.yMMMd('${widget.locale}');
 
     _handleInitialDateValue(dateFormat);
     return InkWell(
