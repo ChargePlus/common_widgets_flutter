@@ -116,7 +116,7 @@ class _DateRangePickerState extends State<DateRangePicker> {
 
   @override
   Widget build(BuildContext context) {
-    final dateFormat = DateFormat.yMMMd(widget.locale);
+    final dateFormat = DateFormat.yMMMd(widget.locale.toString());
 
     _handleInitialDateValue(dateFormat);
     return InkWell(
