@@ -9,11 +9,11 @@ class Annotations extends StatelessWidget {
     super.key,
     this.hasSubscription = false,
     this.hasTax = false,
-    this.hasOneTimeFee = false,
+    this.hasServiceFee = false,
     this.hasDiscountQuota = false,
     this.taxAnnotationTranslation,
     this.subscriptionAnnotationTranslation,
-    this.oneTimeFeeAnnotationTranslation,
+    this.serviceFeeAnnotationTranslation,
     this.discountQuotaAnnotationTranslation,
   });
 
@@ -23,8 +23,8 @@ class Annotations extends StatelessWidget {
   /// This property is used to show tax annotation
   final bool hasTax;
 
-  /// This property is used to show one time fee annotation
-  final bool hasOneTimeFee;
+  /// This property is used to show service fee annotation
+  final bool hasServiceFee;
 
   /// This property is used to show plan's discounted quota annotation
   final bool hasDiscountQuota;
@@ -39,17 +39,17 @@ class Annotations extends StatelessWidget {
   /// Eg. Above charging fees apply after monthly subscription quota is exceeded
   final String? subscriptionAnnotationTranslation;
 
-  /// This property is used to show translated one time fee label
+  /// This property is used to show translated service fee label
   ///
   /// Eg.
-  final String? oneTimeFeeAnnotationTranslation;
+  final String? serviceFeeAnnotationTranslation;
 
   /// This property is used to show translated discounted quota label
   final String? discountQuotaAnnotationTranslation;
 
   @override
   Widget build(BuildContext context) {
-    if (hasTax || hasSubscription || hasOneTimeFee) {
+    if (hasTax || hasSubscription || hasServiceFee) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -57,9 +57,9 @@ class Annotations extends StatelessWidget {
             taxAnnotationTranslation: taxAnnotationTranslation,
             hasTax: hasTax,
           ),
-          _OneTimeFeeAnnotation(
-            hasOneTimeFee: hasOneTimeFee,
-            oneTimeFeeAnnotationTranslation: oneTimeFeeAnnotationTranslation,
+          _ServiceFeeAnnotation(
+            hasServiceFee: hasServiceFee,
+            serviceFeeAnnotationTranslation: serviceFeeAnnotationTranslation,
           ),
           _SubscriptionAnnotation(
             hasSubscription: hasSubscription,
@@ -129,20 +129,20 @@ class _SubscriptionAnnotation extends StatelessWidget {
   }
 }
 
-class _OneTimeFeeAnnotation extends StatelessWidget {
-  const _OneTimeFeeAnnotation({
-    required this.oneTimeFeeAnnotationTranslation,
-    this.hasOneTimeFee = false,
+class _ServiceFeeAnnotation extends StatelessWidget {
+  const _ServiceFeeAnnotation({
+    required this.serviceFeeAnnotationTranslation,
+    this.hasServiceFee = false,
   });
 
-  final bool hasOneTimeFee;
-  final String? oneTimeFeeAnnotationTranslation;
+  final bool hasServiceFee;
+  final String? serviceFeeAnnotationTranslation;
 
   @override
   Widget build(BuildContext context) {
-    if (hasOneTimeFee) {
+    if (hasServiceFee) {
       return Text(
-        oneTimeFeeAnnotationTranslation ?? '',
+        serviceFeeAnnotationTranslation ?? '',
         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Theme.of(context).textTheme.bodySmall?.color,
             ),
