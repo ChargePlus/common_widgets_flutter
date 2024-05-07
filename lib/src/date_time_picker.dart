@@ -16,6 +16,7 @@ class DateTimePicker extends StatefulWidget {
     this.dateOnly = false,
     this.initialValue,
     this.firstDate,
+    this.lastDate,
     this.validator,
     this.focusNode,
   });
@@ -38,6 +39,9 @@ class DateTimePicker extends StatefulWidget {
 
   /// The first selectable date
   final DateTime? firstDate;
+
+  /// The last selectable date
+  final DateTime? lastDate;
 
   /// The validator for the date time picker
   final String? Function(String? value)? validator;
@@ -80,7 +84,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
       context: context,
       initialDate: widget.initialValue ?? DateTime.now(),
       firstDate: widget.firstDate ?? DateTime(1800),
-      lastDate: DateTime.now(),
+      lastDate: widget.lastDate ?? DateTime.now(),
     );
 
     if (pickedDate != null) {
