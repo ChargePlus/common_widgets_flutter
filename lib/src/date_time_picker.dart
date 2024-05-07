@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 /// {@template date_time_picker}
 /// A date time picker that returns a date and time
@@ -41,10 +40,10 @@ class DateTimePicker extends StatefulWidget {
   final DateTime? firstDate;
 
   /// The validator for the date time picker
-  final String? Function(String?)? validator;
+  final String? Function(String? value)? validator;
 
   /// Called when the user selects an item.
-  final void Function(DateTime?) onChanged;
+  final void Function(DateTime? value) onChanged;
 
   /// Locale for date format display on the field
   final Locale locale;
@@ -58,7 +57,14 @@ class DateTimePicker extends StatefulWidget {
 
 class _DateTimePickerState extends State<DateTimePicker> {
   final _controller = TextEditingController();
-  final dateFormat = DateFormat.yMMMMd().addPattern('', ', ').add_jm();
+
+  DateFormat _dateFormat() {
+    return widget.dateOnly
+        ? DateFormat.yMMMMd(widget.locale.toString())
+        : DateFormat.yMMMMd(widget.locale.toString())
+            .addPattern('', ', ')
+            .add_jm();
+  }
 
   Future<TimeOfDay?> _selectTime() async {
     final pickedTime = await showTimePicker(
@@ -80,7 +86,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
     if (pickedDate != null) {
       if (widget.dateOnly == true) {
         setState(() {
-          _controller.text = dateFormat.format(pickedDate);
+          _controller.text = _dateFormat().format(pickedDate);
         });
         widget.onChanged(pickedDate);
       } else {
@@ -96,7 +102,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
           );
 
           setState(() {
-            _controller.text = dateFormat.format(pickedDateTime);
+            _controller.text = _dateFormat().format(pickedDateTime);
           });
 
           widget.onChanged(pickedDateTime);
@@ -107,7 +113,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
 
   void _handleInitialValue() {
     setState(() {
-      _controller.text = dateFormat.format(
+      _controller.text = _dateFormat().format(
         widget.initialValue ?? DateTime.now(),
       );
     });
@@ -134,7 +140,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
           focusNode: widget.focusNode,
           decoration: InputDecoration(
             labelText: widget.labelText,
-            suffixIcon: widget.suffixIcon ?? Icon(MdiIcons.calendarOutline),
+            suffixIcon: widget.suffixIcon,
           ),
         ),
       ),
