@@ -138,6 +138,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
       onTap: widget.enabled ? _selectDate : null,
       child: IgnorePointer(
         child: TextFormField(
+          enabled: widget.enabled,
           controller: _controller,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           validator: widget.validator,
