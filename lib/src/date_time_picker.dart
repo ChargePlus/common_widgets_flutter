@@ -135,7 +135,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: widget.enabled ? _selectDate : null,
+      onTap: _selectDate,
       child: IgnorePointer(
         child: TextFormField(
           enabled: widget.enabled,
