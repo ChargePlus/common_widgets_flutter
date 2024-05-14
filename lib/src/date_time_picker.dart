@@ -80,7 +80,6 @@ class _DateTimePickerState extends State<DateTimePicker> {
   }
 
   Future<void> _selectDate() async {
-    print('select date');
     final pickedDate = await showDatePicker(
       context: context,
       initialDate: widget.initialValue ?? DateTime.now(),
