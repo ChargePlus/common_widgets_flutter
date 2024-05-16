@@ -7,9 +7,9 @@ import 'package:intl/intl.dart';
 class DateTimePicker extends StatefulWidget {
   /// {@macro date_time_picker}
   const DateTimePicker({
-    required this.enabled,
     required this.onChanged,
     required this.locale,
+    this.enabled = true,
     super.key,
     this.labelText,
     this.suffixIcon,
@@ -81,6 +81,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
 
   Future<void> _selectDate() async {
     final pickedDate = await showDatePicker(
+      locale: widget.locale,
       context: context,
       initialDate: widget.initialValue ?? DateTime.now(),
       firstDate: widget.firstDate ?? DateTime(1800),
