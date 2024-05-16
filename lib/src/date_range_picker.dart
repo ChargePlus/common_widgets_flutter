@@ -12,9 +12,12 @@ class DateRangePicker extends StatefulWidget {
     this.initialDateRange,
     this.decoration,
     this.labelText,
+    this.suffixIcon,
     this.helperText,
     this.saveText,
     this.enabled = true,
+    this.firstDate,
+    this.lastDate,
     this.locale,
     this.backgroundColor,
   });
@@ -28,6 +31,9 @@ class DateRangePicker extends StatefulWidget {
   /// Label text in date picker field
   final String? labelText;
 
+  /// Suffix icon for the date picker field
+  final Icon? suffixIcon;
+
   /// Helper text in date picker field
   final String? helperText;
 
@@ -39,6 +45,12 @@ class DateRangePicker extends StatefulWidget {
 
   /// Called when the user selects a date time range.
   final void Function(DateTimeRange?) onChanged;
+
+  /// The first selectable date
+  final DateTime? firstDate;
+
+  /// The last selectable date
+  final DateTime? lastDate;
 
   /// Locale for date format display on the field
   final Locale? locale;
@@ -58,10 +70,10 @@ class _DateRangePickerState extends State<DateRangePicker> {
       context: context,
       initialDateRange: widget.initialDateRange,
       currentDate: DateTime.now(),
-      firstDate: DateTime(1900),
-      lastDate: DateTime.now(),
+      firstDate: widget.firstDate ?? DateTime(1800),
+      lastDate: widget.lastDate ?? DateTime.now(),
       saveText: widget.saveText,
-      locale: Localizations.localeOf(context),
+      locale: widget.locale,
       builder: (context, child) {
         return Theme(
           data: Theme.of(context).copyWith(
@@ -126,6 +138,7 @@ class _DateRangePickerState extends State<DateRangePicker> {
       child: IgnorePointer(
         child: TextFormField(
           controller: controller,
+          enabled: widget.enabled,
           decoration: widget.decoration != null
               ? widget.decoration!.copyWith(
                   labelText: widget.labelText,
@@ -134,7 +147,7 @@ class _DateRangePickerState extends State<DateRangePicker> {
               : InputDecoration(
                   labelText: widget.labelText,
                   helperText: widget.helperText,
-                  suffixIcon: const Icon(Icons.date_range_outlined),
+                  suffixIcon: widget.suffixIcon,
                 ),
         ),
       ),
