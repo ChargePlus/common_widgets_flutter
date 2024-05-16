@@ -50,10 +50,10 @@ class _ScrollFaderState extends State<ScrollFader> {
                 ? Alignment.centerRight
                 : Alignment.bottomCenter,
             colors: [
-              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.surface,
               Colors.transparent,
               Colors.transparent,
-              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.surface,
             ],
             stops: [0.0, 0.1 * _stopStart, 1 - 0.1 * _stopEnd, 1.0],
           ).createShader(rect);
