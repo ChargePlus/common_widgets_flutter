@@ -89,7 +89,10 @@ class SectionCard extends StatelessWidget {
       case CardType.filled:
         return Card(
           color: color ??
-              Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.7),
+              Theme.of(context)
+                  .colorScheme
+                  .surfaceContainerHighest
+                  .withOpacity(0.7),
           elevation: 0,
           margin: margin,
           child: Padding(
