@@ -7,7 +7,7 @@ class ColouredTag extends StatelessWidget {
   /// {@macro coloured_tag}
   const ColouredTag({
     required this.label,
-    required this.color,
+    this.color,
     this.gradient,
     super.key,
   });
@@ -16,7 +16,7 @@ class ColouredTag extends StatelessWidget {
   final Widget label;
 
   /// This property is used for the colour of the coloured tag
-  final Color color;
+  final Color? color;
 
   /// This property is used for the gradient of the coloured tag
   final Gradient? gradient;
