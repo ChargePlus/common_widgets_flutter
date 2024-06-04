@@ -8,7 +8,7 @@ class ColouredTag extends StatelessWidget {
   const ColouredTag({
     required this.label,
     required this.color,
-    this.secondColor,
+    this.gradient,
     super.key,
   });
 
@@ -18,33 +18,18 @@ class ColouredTag extends StatelessWidget {
   /// This property is used for the colour of the coloured tag
   final Color color;
 
-  /// This property is used for the second colour of the coloured tag
-  final Color? secondColor;
+  /// This property is used for the gradient of the coloured tag
+  final Gradient? gradient;
 
   @override
   Widget build(BuildContext context) {
-    final gradient = [
-      color,
-      color,
-      secondColor ?? Colors.transparent,
-      secondColor ?? Colors.transparent,
-    ];
-
-    final stops = [0.0, 0.5, 0.5, 1.0];
-
-    final decoration = secondColor != null
-        ? BoxDecoration(
-            borderRadius: const BorderRadius.all(Radius.circular(8)),
-            gradient: LinearGradient(colors: gradient, stops: stops),
-          )
-        : BoxDecoration(
-            color: color,
-            borderRadius: const BorderRadius.all(Radius.circular(8)),
-          );
-
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      decoration: decoration,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: const BorderRadius.all(Radius.circular(8)),
+        gradient: gradient,
+      ),
       child: AnimatedDefaultTextStyle(
         style: Theme.of(context)
             .textTheme
