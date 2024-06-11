@@ -26,6 +26,7 @@ class SectionCard extends StatelessWidget {
     this.type = CardType.original,
     this.elevation,
     this.spacing = 16,
+    this.shape,
   });
 
   /// This property is used to configure an [Card]'s title.
@@ -53,6 +54,9 @@ class SectionCard extends StatelessWidget {
   /// This property is used to configure an [Card]'s spacing.
   final double spacing;
 
+  /// This property is used to configure an [Card]'s shape.
+  final ShapeBorder? shape;
+
   @override
   Widget build(BuildContext context) {
     switch (type) {
@@ -61,6 +65,7 @@ class SectionCard extends StatelessWidget {
           margin: margin,
           elevation: elevation,
           color: color,
+          shape: shape,
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: spacing),
             child: Column(
@@ -95,6 +100,7 @@ class SectionCard extends StatelessWidget {
                   .withOpacity(0.7),
           elevation: 0,
           margin: margin,
+          shape: shape,
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: spacing),
             child: Column(
@@ -123,12 +129,13 @@ class SectionCard extends StatelessWidget {
       case CardType.outlined:
         return Card(
           elevation: 0,
-          shape: RoundedRectangleBorder(
-            side: BorderSide(
-              color: Theme.of(context).colorScheme.outline,
-            ),
-            borderRadius: const BorderRadius.all(Radius.circular(12)),
-          ),
+          shape: shape ??
+              RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
           color: color ?? Colors.transparent,
           margin: margin,
           child: Padding(
