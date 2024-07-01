@@ -15,22 +15,7 @@ class Annotations extends StatelessWidget {
     this.subscriptionAnnotationTranslation,
     this.serviceFeeAnnotationTranslation,
     this.discountQuotaAnnotationTranslation,
-  })  : assert(
-          hasSubscription ^ (subscriptionAnnotationTranslation != null),
-          'subscriptionAnnotationTranslation is needed',
-        ),
-        assert(
-          hasTax ^ (taxAnnotationTranslation != null),
-          'taxAnnotationTranslation is needed',
-        ),
-        assert(
-          hasServiceFee ^ (serviceFeeAnnotationTranslation != null),
-          'serviceFeeAnnotationTranslation is needed',
-        ),
-        assert(
-          hasDiscountQuota ^ (discountQuotaAnnotationTranslation != null),
-          'discountQuotaAnnotationTranslation is needed',
-        );
+  });
 
   /// This property is used to show subscription annotation
   final bool hasSubscription;
