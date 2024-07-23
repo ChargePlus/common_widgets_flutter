@@ -17,8 +17,7 @@ class NotAvailableText extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedDefaultTextStyle(
       style: TextStyle(
-        color: Theme.of(context).textTheme.bodySmall?.color,
-        fontStyle: FontStyle.italic,
+        color: Theme.of(context).colorScheme.onSurfaceVariant,
       ),
       duration: const Duration(milliseconds: 200),
       child: label,
