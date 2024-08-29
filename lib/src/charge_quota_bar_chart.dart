@@ -52,9 +52,9 @@ class ChargeQuotaBarChart extends StatelessWidget {
           if (titleTrailing != null)
             AnimatedDefaultTextStyle(
               duration: const Duration(milliseconds: 250),
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.onSurfaceVariant,
-              ),
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
               child: titleTrailing ?? const SizedBox.shrink(),
             ),
         ],
