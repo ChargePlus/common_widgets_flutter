@@ -19,14 +19,21 @@ class PageTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      contentPadding: EdgeInsets.zero,
-      title: AnimatedDefaultTextStyle(
-        style: Theme.of(context).textTheme.titleLarge!,
-        duration: const Duration(milliseconds: 200),
-        child: title,
-      ),
-      subtitle: subtitle,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        AnimatedDefaultTextStyle(
+          style: Theme.of(context).textTheme.headlineLarge!,
+          duration: const Duration(milliseconds: 250),
+          child: title,
+        ),
+        if (subtitle != null)
+          AnimatedDefaultTextStyle(
+            style: Theme.of(context).textTheme.bodyLarge!,
+            duration: const Duration(milliseconds: 250),
+            child: subtitle!,
+          ),
+      ],
     );
   }
 }
