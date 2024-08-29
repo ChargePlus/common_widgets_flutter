@@ -1,3 +1,4 @@
+import 'package:breakpoint/breakpoint.dart';
 import 'package:flutter/material.dart';
 
 /// {@template charge_quota_bar_chart}
@@ -8,14 +9,18 @@ class ChargeQuotaBarChart extends StatelessWidget {
   const ChargeQuotaBarChart({
     super.key,
     this.title,
+    this.titleTrailing,
     this.barChartValue,
     this.subtitleLeading,
     this.subtitleTrailing,
     this.dense,
   });
 
-  /// This property is used for title of the bar chart
+  /// This property is used for title in the leading of the bar chart
   final Widget? title;
+
+  /// This property is used for title in the trailing of the bar chart
+  final Widget? titleTrailing;
 
   /// This property is used for subtitle in the leading of the bar chart
   final Widget? subtitleLeading;
@@ -31,28 +36,41 @@ class ChargeQuotaBarChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final spacing = Breakpoint.fromMediaQuery(context).gutters;
+
     return ListTile(
       dense: dense,
-      contentPadding: const EdgeInsets.only(
-        left: 16,
-        right: 16,
-        bottom: 8,
+      // contentPadding: const EdgeInsets.only(
+      //   left: 16,
+      //   right: 16,
+      //   bottom: 8,
+      // ),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          title ?? const SizedBox.shrink(),
+          if (titleTrailing != null)
+            AnimatedDefaultTextStyle(
+              duration: const Duration(milliseconds: 250),
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
+              child: titleTrailing ?? const SizedBox.shrink(),
+            ),
+        ],
       ),
-      title: title != null
-          ? Padding(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: title,
-            )
-          : title,
       subtitle: Column(
         children: [
-          _BarChart(value: barChartValue),
-          const SizedBox(height: 8),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: spacing / 2),
+            child: _BarChart(value: barChartValue),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               subtitleLeading ?? const SizedBox.shrink(),
-              subtitleTrailing ?? const SizedBox.shrink(),
+              if (subtitleTrailing != null)
+                subtitleTrailing ?? const SizedBox.shrink(),
             ],
           ),
         ],
