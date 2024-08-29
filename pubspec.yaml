@@ -8,6 +8,7 @@ environment:
   sdk: ">=3.5.0 <4.0.0"
 
 dependencies:
+  breakpoint: ^1.2.0
   equatable: ^2.0.5
   flutter:
     sdk: flutter
