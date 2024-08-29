@@ -96,7 +96,7 @@ class _BarChart extends StatelessWidget {
           end: value,
         ),
         builder: (context, value, _) =>
-            LinearProgressIndicator(minHeight: 30, value: value),
+            LinearProgressIndicator(minHeight: 10, value: value),
       ),
     );
   }
