@@ -61,8 +61,10 @@ class ChargeQuotaBarChart extends StatelessWidget {
       ),
       subtitle: Column(
         children: [
-          _BarChart(value: barChartValue),
-          const SizedBox(height: 8),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: spacing / 2),
+            child: _BarChart(value: barChartValue),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
