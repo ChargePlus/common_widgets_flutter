@@ -23,18 +23,24 @@ class SectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      contentPadding: EdgeInsets.zero,
-      dense: subtitle == null,
-      title: AnimatedDefaultTextStyle(
-        style: Theme.of(context).textTheme.titleMedium!.copyWith(
-              color: color ?? Theme.of(context).colorScheme.primary,
-              fontWeight: FontWeight.w600,
-            ),
-        duration: const Duration(milliseconds: 200),
-        child: Text(title),
-      ),
-      subtitle: subtitle != null ? Text(subtitle!) : null,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        AnimatedDefaultTextStyle(
+          style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                color: color ?? Theme.of(context).colorScheme.primary,
+                fontWeight: FontWeight.w600,
+              ),
+          duration: const Duration(milliseconds: 250),
+          child: Text(title),
+        ),
+        if (subtitle != null)
+          AnimatedDefaultTextStyle(
+            style: Theme.of(context).textTheme.bodyLarge!,
+            duration: const Duration(milliseconds: 250),
+            child: Text(subtitle!),
+          ),
+      ],
     );
   }
 }
