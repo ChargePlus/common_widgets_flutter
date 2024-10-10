@@ -8,6 +8,7 @@ export 'src/date_range_picker.dart';
 export 'src/date_time_picker.dart';
 export 'src/discard_changes_dialog.dart';
 export 'src/expandable_search.dart';
+export 'src/extensions/extensions.dart';
 export 'src/loader.dart';
 export 'src/models/models.dart';
 export 'src/not_available_text.dart';
