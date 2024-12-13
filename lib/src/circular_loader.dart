@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 /// {@endtemplate}
 class CircularLoader extends StatelessWidget {
   /// {@macro circular_loader}
-  const CircularLoader({super.key, this.height, this.width});
+  const CircularLoader({super.key, this.height, this.width, this.color});
 
   /// This property is used for the height of the circular progress indicator
   final double? height;
@@ -13,13 +13,17 @@ class CircularLoader extends StatelessWidget {
   /// This property is used for the width of the circular progress indicator
   final double? width;
 
+  /// This property is used for the color of the circular progress indicator
+  final Color? color;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: height ?? 17,
       width: width ?? 17,
-      child: const CircularProgressIndicator(
+      child: CircularProgressIndicator(
         strokeWidth: 2,
+        color: color,
       ),
     );
   }

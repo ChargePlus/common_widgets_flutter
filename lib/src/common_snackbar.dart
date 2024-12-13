@@ -1,4 +1,4 @@
-import 'package:common_widgets_flutter/src/circular_loader.dart';
+import 'package:common_widgets_flutter/common_widgets_flutter.dart';
 import 'package:flutter/material.dart';
 
 /// {@template common_snackbar}
@@ -47,12 +47,14 @@ class CommonSnackbar extends StatelessWidget {
         ),
         if (isLoading)
           IconTheme(
-            data: iconTheme.copyWith(color: theme.scaffoldBackgroundColor),
-            child: const CircularLoader(),
+            data: iconTheme.copyWith(color: theme.colorScheme.onInverseSurface),
+            child: CircularLoader(
+              color: theme.colorScheme.onInverseSurface,
+            ),
           ),
         if (trailing != null && !isLoading)
           IconTheme(
-            data: iconTheme.copyWith(color: theme.scaffoldBackgroundColor),
+            data: iconTheme.copyWith(color: theme.colorScheme.onInverseSurface),
             child: trailing!,
           ),
       ],
