@@ -27,7 +27,7 @@ class Loader extends StatelessWidget {
         ShimmerEffect(
           duration: 1200.ms,
           color: color ??
-              Theme.of(context).scaffoldBackgroundColor.withOpacity(0.7),
+              Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.7),
         ),
       ],
       child: child,
