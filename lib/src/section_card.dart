@@ -97,7 +97,7 @@ class SectionCard extends StatelessWidget {
               Theme.of(context)
                   .colorScheme
                   .surfaceContainerHighest
-                  .withOpacity(0.7),
+                  .withValues(alpha: 0.7),
           elevation: 0,
           margin: margin,
           shape: shape,
