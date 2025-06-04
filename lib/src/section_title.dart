@@ -5,11 +5,7 @@ import 'package:flutter/material.dart';
 /// {@endtemplate}
 class SectionTitle extends StatelessWidget {
   /// {@macro section_title}
-  const SectionTitle({
-    required this.title,
-    super.key,
-    this.color,
-  });
+  const SectionTitle({required this.title, super.key, this.color});
 
   /// This property is used for a section's title
   final String title;
@@ -21,9 +17,9 @@ class SectionTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedDefaultTextStyle(
       style: Theme.of(context).textTheme.titleMedium!.copyWith(
-            color: color ?? Theme.of(context).colorScheme.primary,
-            fontWeight: FontWeight.w600,
-          ),
+        color: color ?? Theme.of(context).colorScheme.primary,
+        fontWeight: FontWeight.bold,
+      ),
       duration: const Duration(milliseconds: 200),
       child: Text(title),
     );
