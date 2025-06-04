@@ -79,7 +79,9 @@ class SectionCard extends StatelessWidget {
                     spacing,
                   ),
                   child: AnimatedDefaultTextStyle(
-                    style: Theme.of(context).textTheme.titleLarge!,
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                      fontWeight: FontWeight.w200,
+                    ),
                     duration: const Duration(milliseconds: 200),
                     child: title,
                   ),
@@ -112,7 +114,9 @@ class SectionCard extends StatelessWidget {
                     spacing,
                   ),
                   child: AnimatedDefaultTextStyle(
-                    style: Theme.of(context).textTheme.titleLarge!,
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                      fontWeight: FontWeight.w200,
+                    ),
                     duration: const Duration(milliseconds: 200),
                     child: title,
                   ),
@@ -146,7 +150,9 @@ class SectionCard extends StatelessWidget {
                     spacing,
                   ),
                   child: AnimatedDefaultTextStyle(
-                    style: Theme.of(context).textTheme.titleLarge!,
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                      fontWeight: FontWeight.w200,
+                    ),
                     duration: const Duration(milliseconds: 200),
                     child: title,
                   ),
