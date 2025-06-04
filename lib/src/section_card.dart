@@ -9,7 +9,7 @@ enum CardType {
   filled,
 
   /// Outlined [Card] with colorScheme's outline value
-  outlined
+  outlined,
 }
 
 /// {@template section_card}
@@ -79,9 +79,7 @@ class SectionCard extends StatelessWidget {
                     spacing,
                   ),
                   child: AnimatedDefaultTextStyle(
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          fontWeight: FontWeight.w200,
-                        ),
+                    style: Theme.of(context).textTheme.titleLarge!,
                     duration: const Duration(milliseconds: 200),
                     child: title,
                   ),
@@ -93,11 +91,11 @@ class SectionCard extends StatelessWidget {
         );
       case CardType.filled:
         return Card(
-          color: color ??
-              Theme.of(context)
-                  .colorScheme
-                  .surfaceContainerHighest
-                  .withValues(alpha: 0.7),
+          color:
+              color ??
+              Theme.of(
+                context,
+              ).colorScheme.surfaceContainerHighest.withValues(alpha: 0.7),
           elevation: 0,
           margin: margin,
           shape: shape,
@@ -114,9 +112,7 @@ class SectionCard extends StatelessWidget {
                     spacing,
                   ),
                   child: AnimatedDefaultTextStyle(
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          fontWeight: FontWeight.w200,
-                        ),
+                    style: Theme.of(context).textTheme.titleLarge!,
                     duration: const Duration(milliseconds: 200),
                     child: title,
                   ),
@@ -129,11 +125,10 @@ class SectionCard extends StatelessWidget {
       case CardType.outlined:
         return Card(
           elevation: 0,
-          shape: shape ??
+          shape:
+              shape ??
               RoundedRectangleBorder(
-                side: BorderSide(
-                  color: Theme.of(context).colorScheme.outline,
-                ),
+                side: BorderSide(color: Theme.of(context).colorScheme.outline),
                 borderRadius: const BorderRadius.all(Radius.circular(12)),
               ),
           color: color ?? Colors.transparent,
@@ -151,9 +146,7 @@ class SectionCard extends StatelessWidget {
                     spacing,
                   ),
                   child: AnimatedDefaultTextStyle(
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          fontWeight: FontWeight.w200,
-                        ),
+                    style: Theme.of(context).textTheme.titleLarge!,
                     duration: const Duration(milliseconds: 200),
                     child: title,
                   ),
