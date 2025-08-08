@@ -11,12 +11,12 @@ class Annotations extends StatelessWidget {
     this.hasTax = false,
     this.hasServiceFee = false,
     this.hasDiscountQuota = false,
-    this.hasDiscountTariff = false,
+    this.hasNoDiscountTariff = false,
     this.taxAnnotationTranslation,
     this.subscriptionAnnotationTranslation,
     this.serviceFeeAnnotationTranslation,
     this.discountQuotaAnnotationTranslation,
-    this.discountTariffAnnotationTranslation,
+    this.noDiscountTariffAnnotationTranslation,
   });
 
   /// This property is used to show subscription annotation
@@ -31,8 +31,8 @@ class Annotations extends StatelessWidget {
   /// This property is used to show plan's discounted quota annotation
   final bool hasDiscountQuota;
 
-  /// This property is used to show discount tariff annotation
-  final bool hasDiscountTariff;
+  /// This property is used to show no discount tariff annotation
+  final bool hasNoDiscountTariff;
 
   /// This property is used to show translated tax label
   ///
@@ -53,7 +53,7 @@ class Annotations extends StatelessWidget {
   final Text? discountQuotaAnnotationTranslation;
 
   /// This property is used to show translated discount tariff label
-  final Text? discountTariffAnnotationTranslation;
+  final Text? noDiscountTariffAnnotationTranslation;
 
   @override
   Widget build(BuildContext context) {
@@ -73,8 +73,8 @@ class Annotations extends StatelessWidget {
               subscriptionAnnotationTranslation ?? const SizedBox.shrink(),
             if (hasDiscountQuota)
               discountQuotaAnnotationTranslation ?? const SizedBox.shrink(),
-            if (hasDiscountTariff)
-              discountTariffAnnotationTranslation ?? const SizedBox.shrink(),
+            if (hasNoDiscountTariff)
+              noDiscountTariffAnnotationTranslation ?? const SizedBox.shrink(),
           ],
         ),
       );
