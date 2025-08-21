@@ -1,5 +1,6 @@
 export 'src/annotations.dart';
 export 'src/bottom_sheet_handle.dart';
+export 'src/bullet_point_text.dart';
 export 'src/charge_quota_bar_chart.dart';
 export 'src/circular_loader.dart';
 export 'src/coloured_tag.dart';
