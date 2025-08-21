@@ -92,7 +92,10 @@ class BulletPointText extends StatelessWidget {
                     right: spacing / 2,
                     bottom: spacing / 2,
                   ),
-                  child: Column(children: bulletPoints),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: bulletPoints,
+                  ),
                 ),
             ],
           ),
