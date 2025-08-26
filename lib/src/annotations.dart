@@ -66,6 +66,7 @@ class Annotations extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            Text('Testing annotation'),
             if (hasTax) taxAnnotationTranslation ?? const SizedBox.shrink(),
             if (hasServiceFee)
               serviceFeeAnnotationTranslation ?? const SizedBox.shrink(),
