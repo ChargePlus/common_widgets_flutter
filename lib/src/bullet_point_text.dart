@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 
-/// A text widget that displays a single bullet (•) or child dash (-) followed by
-/// its content and any nested bullet points.
+/// A text widget that displays a single bullet (•) or child dash (-)
+/// followed by its content and any nested bullet points.
 ///
 /// This widget is intended to be composed recursively to produce multi-level
 /// bullet lists without relying on `ListView` / `ListTile` boilerplate. You can
