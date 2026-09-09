@@ -89,7 +89,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
     );
 
     if (pickedDate != null) {
-      if (widget.dateOnly == true) {
+      if (widget.dateOnly) {
         setState(() {
           _controller.text = _dateFormat().format(pickedDate);
         });
