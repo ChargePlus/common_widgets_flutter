@@ -9,7 +9,7 @@ environment:
 
 dependencies:
   breakpoint: ^1.2.0
-  equatable: ^2.0.7
+  equatable: ">=2.0.7 <4.0.0"
   flutter:
     sdk: flutter
   flutter_adaptive_scaffold: ^0.3.3+1
