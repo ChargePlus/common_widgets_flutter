@@ -77,9 +77,7 @@ class _DateRangePickerState extends State<DateRangePicker> {
       builder: (context, child) {
         return Theme(
           data: Theme.of(context).copyWith(
-            appBarTheme: AppBarTheme(
-              backgroundColor: widget.backgroundColor,
-            ),
+            appBarTheme: AppBarTheme(backgroundColor: widget.backgroundColor),
           ),
           child: child!,
         );
@@ -112,8 +110,9 @@ class _DateRangePickerState extends State<DateRangePicker> {
 
   void _handleInitialDateValue(DateFormat dateFormat) {
     if (widget.initialDateRange != null) {
-      final formattedStartDate =
-          dateFormat.format(widget.initialDateRange!.start);
+      final formattedStartDate = dateFormat.format(
+        widget.initialDateRange!.start,
+      );
       final formattedEndDate = dateFormat.format(widget.initialDateRange!.end);
 
       setState(() {
@@ -132,9 +131,7 @@ class _DateRangePickerState extends State<DateRangePicker> {
 
     _handleInitialDateValue(dateFormat);
     return InkWell(
-      onTap: widget.enabled
-          ? () => _showDateRangePicker(dateFormat)
-          : null,
+      onTap: widget.enabled ? () => _showDateRangePicker(dateFormat) : null,
       child: IgnorePointer(
         child: TextFormField(
           controller: controller,

@@ -63,9 +63,7 @@ class _ExpandableSearchState extends State<ExpandableSearch> {
             prefixIcon: widget.prefixIcon,
             suffixIcon: widget.suffixIcon,
             border: const OutlineInputBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(30),
-              ),
+              borderRadius: BorderRadius.all(Radius.circular(30)),
             ),
           ),
           textInputAction: TextInputAction.search,
@@ -122,23 +120,17 @@ class _SearchDelegate extends SearchDelegate<String?> {
   @override
   Widget buildResults(BuildContext context) {
     final suggestions = data.where(
-      (value) => value.title.toLowerCase().startsWith(
-            query.toLowerCase(),
-          ),
+      (value) => value.title.toLowerCase().startsWith(query.toLowerCase()),
     );
     if (suggestions.isEmpty) {
       return Center(
-        child: Text(
-          'Could not find "$query"\n.',
-          textAlign: TextAlign.center,
-        ),
+        child: Text('Could not find "$query"\n.', textAlign: TextAlign.center),
       );
     }
 
     return _SuggestionList(
       query: query,
-      suggestions:
-          suggestions.map((value) => value.title).toList(),
+      suggestions: suggestions.map((value) => value.title).toList(),
       onSelected: (suggestion) {
         query = suggestion;
         // showResults(context);
@@ -153,15 +145,12 @@ class _SearchDelegate extends SearchDelegate<String?> {
         ? _history
         : data.where(
             (value) =>
-                value.title.toLowerCase().startsWith(
-                      query.toLowerCase(),
-                    ),
+                value.title.toLowerCase().startsWith(query.toLowerCase()),
           );
 
     return _SuggestionList(
       query: query,
-      suggestions:
-          suggestions.map((value) => value.title).toList(),
+      suggestions: suggestions.map((value) => value.title).toList(),
       onSelected: (suggestion) {
         query = suggestion;
         // showResults(context);
@@ -195,10 +184,9 @@ class _SuggestionList extends StatelessWidget {
           title: RichText(
             text: TextSpan(
               text: suggestion.substring(0, query.length),
-              style: Theme.of(context)
-                  .textTheme
-                  .titleMedium
-                  ?.copyWith(fontWeight: FontWeight.bold),
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
               children: <TextSpan>[
                 TextSpan(
                   text: suggestion.substring(query.length),

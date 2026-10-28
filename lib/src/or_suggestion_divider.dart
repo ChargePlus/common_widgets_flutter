@@ -24,29 +24,15 @@ class OrSuggestionDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 24,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
       child: Row(
         children: [
-          Expanded(
-            child: Divider(
-              color: dividerColor,
-            ),
-          ),
+          Expanded(child: Divider(color: dividerColor)),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Text(
-              orLabel,
-              style: TextStyle(color: textColor),
-            ),
+            child: Text(orLabel, style: TextStyle(color: textColor)),
           ),
-          Expanded(
-            child: Divider(
-              color: dividerColor,
-            ),
-          ),
+          Expanded(child: Divider(color: dividerColor)),
         ],
       ),
     );

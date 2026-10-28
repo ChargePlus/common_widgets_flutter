@@ -16,10 +16,9 @@ class BottomSheetHandle extends StatelessWidget {
         borderRadius: BorderRadius.circular(
           (Theme.of(context).bottomSheetTheme.dragHandleSize?.height ?? 4) / 2,
         ),
-        color: Theme.of(context)
-            .colorScheme
-            .onSurfaceVariant
-            .withValues(alpha: 0.4),
+        color: Theme.of(
+          context,
+        ).colorScheme.onSurfaceVariant.withValues(alpha: 0.4),
       ),
     );
   }

@@ -6,11 +6,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 /// {@endtemplate}
 class Loader extends StatelessWidget {
   /// {@macro loader}
-  const Loader({
-    required this.child,
-    this.color,
-    super.key,
-  });
+  const Loader({required this.child, this.color, super.key});
 
   /// Creates a widget that insets its child.
   final Widget child;
@@ -26,7 +22,8 @@ class Loader extends StatelessWidget {
         TintEffect(color: Colors.grey.shade700),
         ShimmerEffect(
           duration: 1200.ms,
-          color: color ??
+          color:
+              color ??
               Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.7),
         ),
       ],

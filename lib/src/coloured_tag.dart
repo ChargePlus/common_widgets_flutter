@@ -31,10 +31,9 @@ class ColouredTag extends StatelessWidget {
         gradient: gradient,
       ),
       child: AnimatedDefaultTextStyle(
-        style: Theme.of(context)
-            .textTheme
-            .labelSmall!
-            .copyWith(fontWeight: FontWeight.w600),
+        style: Theme.of(
+          context,
+        ).textTheme.labelSmall!.copyWith(fontWeight: FontWeight.w600),
         duration: const Duration(milliseconds: 200),
         child: label,
       ),
