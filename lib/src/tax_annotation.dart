@@ -41,7 +41,7 @@ class TaxAnnotation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (hasTax == true || hasSubscription == true) {
+    if (hasTax || hasSubscription) {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
         child: Column(
@@ -83,7 +83,7 @@ class _TaxType extends StatelessWidget {
   Widget build(BuildContext context) {
     final numberFormat = NumberFormat();
 
-    if (hasTax == true) {
+    if (hasTax) {
       return Text.rich(
         TextSpan(
           text: '*  $beforeLabel',

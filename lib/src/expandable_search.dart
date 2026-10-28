@@ -69,8 +69,8 @@ class _ExpandableSearchState extends State<ExpandableSearch> {
             ),
           ),
           textInputAction: TextInputAction.search,
-          onFieldSubmitted: (String value) {},
-          onChanged: (String value) {},
+          onFieldSubmitted: (value) {},
+          onChanged: (value) {},
         ),
       ),
     );
@@ -122,7 +122,7 @@ class _SearchDelegate extends SearchDelegate<String?> {
   @override
   Widget buildResults(BuildContext context) {
     final suggestions = data.where(
-      (ExpandableSearchItem value) => value.title.toLowerCase().startsWith(
+      (value) => value.title.toLowerCase().startsWith(
             query.toLowerCase(),
           ),
     );
@@ -138,8 +138,8 @@ class _SearchDelegate extends SearchDelegate<String?> {
     return _SuggestionList(
       query: query,
       suggestions:
-          suggestions.map((ExpandableSearchItem value) => value.title).toList(),
-      onSelected: (String suggestion) {
+          suggestions.map((value) => value.title).toList(),
+      onSelected: (suggestion) {
         query = suggestion;
         // showResults(context);
         close(context, query);
@@ -152,7 +152,7 @@ class _SearchDelegate extends SearchDelegate<String?> {
     final suggestions = query.isEmpty
         ? _history
         : data.where(
-            (ExpandableSearchItem value) =>
+            (value) =>
                 value.title.toLowerCase().startsWith(
                       query.toLowerCase(),
                     ),
@@ -161,8 +161,8 @@ class _SearchDelegate extends SearchDelegate<String?> {
     return _SuggestionList(
       query: query,
       suggestions:
-          suggestions.map((ExpandableSearchItem value) => value.title).toList(),
-      onSelected: (String suggestion) {
+          suggestions.map((value) => value.title).toList(),
+      onSelected: (suggestion) {
         query = suggestion;
         // showResults(context);
         close(context, query);
@@ -186,7 +186,7 @@ class _SuggestionList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: suggestions.length,
-      itemBuilder: (BuildContext context, int index) {
+      itemBuilder: (context, index) {
         final suggestion = suggestions[index];
         return ListTile(
           leading: query.isEmpty

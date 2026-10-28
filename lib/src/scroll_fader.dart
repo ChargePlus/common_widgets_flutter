@@ -41,7 +41,7 @@ class _ScrollFaderState extends State<ScrollFader> {
         return true;
       },
       child: ShaderMask(
-        shaderCallback: (Rect rect) {
+        shaderCallback: (rect) {
           return LinearGradient(
             begin: widget.scrollDirection == Axis.horizontal
                 ? Alignment.centerLeft

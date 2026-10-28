@@ -132,7 +132,7 @@ class _DateRangePickerState extends State<DateRangePicker> {
 
     _handleInitialDateValue(dateFormat);
     return InkWell(
-      onTap: widget.enabled == true
+      onTap: widget.enabled
           ? () => _showDateRangePicker(dateFormat)
           : null,
       child: IgnorePointer(
