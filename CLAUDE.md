@@ -38,7 +38,7 @@ available it takes most of the load; otherwise work in Claude as usual.
   migrating off it; only 2 legacy widgets still use it.
 - Release = pubspec version bump (`X.Y.Z+build`) as commit
   `build: vX.Y.Z` on a `release/X.Y.Z` branch, merged to main+develop,
-  bare-semver tag.
+  bare-semver tag. Cut it with the `cut-release` skill.
 - README's MIT badge is stale — there is no LICENSE file; don't
   propagate the claim.
 
