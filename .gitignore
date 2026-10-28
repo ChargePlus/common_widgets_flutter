@@ -42,3 +42,5 @@ app.*.map.json
 # FVM Version Cache
 .fvm/
 .fvmrc
+# Claude related
+.claude/settings.local.json
