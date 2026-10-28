@@ -11,8 +11,8 @@ chargeplus_customer's `cut-release`.
 
 **`main` is what ships.** The apps depend on this package by git URL with
 no ref and gitignore `pubspec.lock`, so the push to `main` reaches every
-app on its next `pub get` — there is no other release gate (and this repo
-has no CI). Only release what passed the `routine`.
+app on its next `pub get` — there is no other release gate. Only release
+what passed the `routine`.
 
 Argument (optional):
 
@@ -58,9 +58,11 @@ git branch -a --list '*release/*' '*hotfix/*'   # must be empty
   hotfix wasn't back-merged; stop and ask.
 - Commits to release:
   `git log --oneline --first-parent <prev-tag>..origin/develop` non-empty.
-- Health (no CI here): on `develop`, `flutter pub get`,
-  `flutter analyze lib test` (no errors, no new issues) and
-  `flutter test` (all pass). Each merged PR should carry a routine status
+- Health: CI (`ci` workflow) runs on every push to `develop`. The latest
+  run must be green **for `origin/develop`'s head SHA**:
+  `gh run list -b develop -e push -L1 --json headSha,conclusion`. If it is
+  missing or red, run the gates locally (format, analyze, `very_good test`)
+  and stop on any failure. Each merged PR should carry a routine status
   block — mention any that don't.
 
 ### 2. Compute the version
