@@ -41,3 +41,9 @@ available it takes most of the load; otherwise work in Claude as usual.
   bare-semver tag.
 - README's MIT badge is stale — there is no LICENSE file; don't
   propagate the claim.
+
+## Pre-merge routine
+
+Before handing a PR over for review, run the `routine` skill (`/simplify`,
+`/code-review`, gates, consumer impact). It stops at the human review gate;
+never merge.
