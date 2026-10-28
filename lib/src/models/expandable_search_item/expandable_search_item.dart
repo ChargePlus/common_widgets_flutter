@@ -11,10 +11,7 @@ part 'expandable_search_item.g.dart';
 @JsonSerializable()
 class ExpandableSearchItem extends Equatable {
   /// {@macro expandable_search_item}
-  const ExpandableSearchItem({
-    required this.title,
-    required this.value,
-  });
+  const ExpandableSearchItem({required this.title, required this.value});
 
   /// Create a new [ExpandableSearchItem] instance from a map
   factory ExpandableSearchItem.fromJson(Map<String, dynamic> json) =>
@@ -40,8 +37,5 @@ class ExpandableSearchItem extends Equatable {
   Map<String, dynamic> toJson() => _$ExpandableSearchItemToJson(this);
 
   @override
-  List<Object?> get props => [
-        title,
-        value,
-      ];
+  List<Object?> get props => [title, value];
 }

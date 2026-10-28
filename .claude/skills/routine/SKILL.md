@@ -10,9 +10,9 @@ passes (`driver-critic`, `deep-review`, `verify-sim`) don't apply to a
 widget library; the consumer-impact pass replaces them, because this repo's
 real risk is what a merge does to the apps (CLAUDE.md, blast-radius rules).
 
-This repo has **no CI**. The routine is the only gate a PR gets — run all
-four passes on every substantive PR (docs-only or config-only PRs: pass 3
-and pass 4 only).
+CI checks format, analyze, tests and coverage, but nothing about the
+consumers — run all four passes on every substantive PR (docs-only or
+config-only PRs: pass 3 and pass 4 only).
 
 ## Order
 
@@ -45,12 +45,14 @@ its accepted findings sit uncommitted.
 ## Pass 3 — gates
 
 ```bash
-dart format --set-exit-if-changed lib test
+dart format --line-length 80 --output=none --set-exit-if-changed lib test
 flutter analyze lib test
-flutter test
+very_good test --coverage --test-randomize-ordering-seed random
 ```
 
-Plus `dart run build_runner build -d` if a json_serializable model changed
+Then confirm the PR's CI (`gh pr checks <n>`) is green, including the
+coverage floor and the markdown spell check (a new word goes in
+`.github/cspell.json` `words`). Plus `dart run build_runner build -d` if a json_serializable model changed
 (the regenerated `.g.dart` must be committed). All green, or the pass is ❌.
 New or changed public widgets need dartdoc and a test under
 `test/widgets/` (CLAUDE.md) — a missing one is a finding, fix it here.

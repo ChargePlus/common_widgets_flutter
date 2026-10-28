@@ -5,10 +5,7 @@ import 'package:flutter/material.dart';
 /// {@endtemplate}
 class NotAvailableText extends StatelessWidget {
   /// {@macro not_available_text}
-  const NotAvailableText({
-    required this.label,
-    super.key,
-  });
+  const NotAvailableText({required this.label, super.key});
 
   /// This property is used for a not available text
   final Widget label;
@@ -16,9 +13,7 @@ class NotAvailableText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedDefaultTextStyle(
-      style: TextStyle(
-        color: Theme.of(context).colorScheme.onSurfaceVariant,
-      ),
+      style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
       duration: const Duration(milliseconds: 200),
       child: label,
     );

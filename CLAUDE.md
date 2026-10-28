@@ -17,9 +17,12 @@ available it takes most of the load; otherwise work in Claude as usual.
 - A breaking public-API change is allowed ONLY when the same piece of
   work updates every consumer app in lockstep — plan the consumer PRs
   before merging the library change.
-- There is NO CI here (no analyze/test/format gate at all). Local
-  `flutter analyze` + `flutter test` before every push is the only
-  safety net.
+- CI (`ci` workflow, VeryGood `flutter_package`) runs on PRs and pushes
+  to main/develop: format, analyze, `very_good test` with
+  `min_coverage: 20`, semantic PR titles, and a spell check over ALL
+  markdown — a typo in any `.md` fails the build. Run
+  `dart format --line-length 80 --set-exit-if-changed lib test`,
+  `flutter analyze lib test` and `flutter test` locally before pushing.
 
 ## Conventions
 
@@ -38,7 +41,7 @@ available it takes most of the load; otherwise work in Claude as usual.
   migrating off it; only 2 legacy widgets still use it.
 - Release = pubspec version bump (`X.Y.Z+build`) as commit
   `build: vX.Y.Z` on a `release/X.Y.Z` branch, merged to main+develop,
-  bare-semver tag.
+  bare-semver tag. Cut it with the `cut-release` skill.
 - README's MIT badge is stale — there is no LICENSE file; don't
   propagate the claim.
 
