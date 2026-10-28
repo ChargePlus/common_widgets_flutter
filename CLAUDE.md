@@ -6,6 +6,12 @@ git URL with NO ref pin — and all three consumers gitignore pubspec.lock.
 Anything merged to `main` silently reaches every app on its next
 `pub get`, with no lockfile diff for reviewers to catch.
 
+## Codex (optional builder)
+
+Before implementation work, invoke the `codex` skill. Where Codex is
+available it takes most of the load; otherwise work in Claude as usual.
+`AGENTS.md` points Codex back at this file — keep repo guidance here.
+
 ## Blast-radius rules
 
 - A breaking public-API change is allowed ONLY when the same piece of
