@@ -31,7 +31,8 @@ class _ScrollFaderState extends State<ScrollFader> {
       onNotification: (scrollNotification) {
         setState(() {
           _stopStart = scrollNotification.metrics.pixels / 10;
-          _stopEnd = (scrollNotification.metrics.maxScrollExtent -
+          _stopEnd =
+              (scrollNotification.metrics.maxScrollExtent -
                   scrollNotification.metrics.pixels) /
               10;
 

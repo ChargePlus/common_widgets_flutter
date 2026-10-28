@@ -5,11 +5,7 @@ import 'package:flutter/material.dart';
 /// {@endtemplate}
 class PageTitle extends StatelessWidget {
   /// {@macro page_title}
-  const PageTitle({
-    required this.title,
-    super.key,
-    this.subtitle,
-  });
+  const PageTitle({required this.title, super.key, this.subtitle});
 
   /// This property is used to configure an [AppBar]'s title.
   final Widget title;

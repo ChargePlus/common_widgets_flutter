@@ -21,9 +21,7 @@ void main() {
     testWidgets('renders child dash marker when isChild=true', (tester) async {
       await tester.pumpWidget(
         const MaterialApp(
-          home: Scaffold(
-            body: BulletPointText('Child', isChild: true),
-          ),
+          home: Scaffold(body: BulletPointText('Child', isChild: true)),
         ),
       );
 
@@ -60,9 +58,7 @@ void main() {
       const customStyle = TextStyle(fontSize: 22, color: Colors.purple);
       await tester.pumpWidget(
         const MaterialApp(
-          home: Scaffold(
-            body: BulletPointText('Styled', style: customStyle),
-          ),
+          home: Scaffold(body: BulletPointText('Styled', style: customStyle)),
         ),
       );
 

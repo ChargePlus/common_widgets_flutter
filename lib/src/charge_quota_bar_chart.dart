@@ -53,8 +53,8 @@ class ChargeQuotaBarChart extends StatelessWidget {
             AnimatedDefaultTextStyle(
               duration: const Duration(milliseconds: 250),
               style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    color: Theme.of(context).colorScheme.onSurfaceVariant,
-                  ),
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
               child: titleTrailing ?? const SizedBox.shrink(),
             ),
         ],
@@ -91,10 +91,7 @@ class _BarChart extends StatelessWidget {
       child: TweenAnimationBuilder<double>(
         duration: const Duration(milliseconds: 250),
         curve: Curves.easeInOut,
-        tween: Tween<double>(
-          begin: 0,
-          end: value,
-        ),
+        tween: Tween<double>(begin: 0, end: value),
         builder: (context, value, _) =>
             LinearProgressIndicator(minHeight: 10, value: value),
       ),

@@ -31,9 +31,7 @@ class DiscardChangesDialog extends StatelessWidget {
     return AlertDialog(
       title: Text(title),
       content: SingleChildScrollView(
-        child: ListBody(
-          children: [Text(content)],
-        ),
+        child: ListBody(children: [Text(content)]),
       ),
       actionsAlignment: MainAxisAlignment.end,
       actions: [

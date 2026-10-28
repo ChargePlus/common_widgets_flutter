@@ -21,10 +21,7 @@ class CircularLoader extends StatelessWidget {
     return SizedBox(
       height: height ?? 17,
       width: width ?? 17,
-      child: CircularProgressIndicator(
-        strokeWidth: 2,
-        color: color,
-      ),
+      child: CircularProgressIndicator(strokeWidth: 2, color: color),
     );
   }
 }

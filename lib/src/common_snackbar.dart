@@ -13,9 +13,9 @@ class CommonSnackbar extends StatelessWidget {
     this.trailing,
     this.maxLines = 2,
   }) : assert(
-          isLoading ^ (trailing != null),
-          'isLoading can either be true, or trailing cannot be null',
-        );
+         isLoading ^ (trailing != null),
+         'isLoading can either be true, or trailing cannot be null',
+       );
 
   /// Text shown
   final String text;
@@ -48,9 +48,7 @@ class CommonSnackbar extends StatelessWidget {
         if (isLoading)
           IconTheme(
             data: iconTheme.copyWith(color: theme.colorScheme.onInverseSurface),
-            child: CircularLoader(
-              color: theme.colorScheme.onInverseSurface,
-            ),
+            child: CircularLoader(color: theme.colorScheme.onInverseSurface),
           ),
         if (trailing != null && !isLoading)
           IconTheme(

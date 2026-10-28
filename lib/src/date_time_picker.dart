@@ -65,9 +65,9 @@ class _DateTimePickerState extends State<DateTimePicker> {
   DateFormat _dateFormat() {
     return widget.dateOnly
         ? DateFormat.yMMMMd(widget.locale.toString())
-        : DateFormat.yMMMMd(widget.locale.toString())
-            .addPattern('', ', ')
-            .add_jm();
+        : DateFormat.yMMMMd(
+            widget.locale.toString(),
+          ).addPattern('', ', ').add_jm();
   }
 
   Future<TimeOfDay?> _selectTime() async {
@@ -122,9 +122,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
         widget.initialValue ?? DateTime.now(),
       );
     });
-    widget.onChanged(
-      widget.initialValue ?? DateTime.now(),
-    );
+    widget.onChanged(widget.initialValue ?? DateTime.now());
   }
 
   @override
