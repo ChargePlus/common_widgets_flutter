@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// {@template loader}
 /// Apply shimmer effect for any widgets

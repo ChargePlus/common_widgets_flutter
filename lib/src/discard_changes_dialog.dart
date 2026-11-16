@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// {@template discard_changes_dialog}
 /// An alert dialog for users who tries to navigate away from a form

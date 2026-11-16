@@ -1,5 +1,5 @@
 import 'package:common_widgets_flutter/common_widgets_flutter.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// {@template common_snackbar}
 /// A snackbar

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// {@template date_range_picker}
 /// A date range picker that returns start date and time, end date and time

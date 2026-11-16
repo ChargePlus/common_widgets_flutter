@@ -1,5 +1,5 @@
 import 'package:breakpoint/breakpoint.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// {@template charge_quota_bar_chart}
 /// Bar chart for charge quota
