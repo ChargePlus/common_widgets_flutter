@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// {@template circular_loader}
 /// Circular Progress Indicator for SnackBar

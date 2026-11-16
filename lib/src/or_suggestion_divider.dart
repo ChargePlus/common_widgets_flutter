@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// {@template or_suggestion_divider}
 /// Divider with an "or" label
