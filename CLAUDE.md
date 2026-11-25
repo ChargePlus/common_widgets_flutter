@@ -6,11 +6,18 @@ git URL with NO ref pin — and all three consumers gitignore pubspec.lock.
 Anything merged to `main` silently reaches every app on its next
 `pub get`, with no lockfile diff for reviewers to catch.
 
-## Codex (optional builder)
+## Process: pstack
 
-Before implementation work, invoke the `codex` skill. Where Codex is
-available it takes most of the load; otherwise work in Claude as usual.
-`AGENTS.md` points Codex back at this file — keep repo guidance here.
+pstack is the process here (`.claude/settings.json` enables the plugin at
+project scope). Start non-trivial work with `/pstack:poteto-mode` and read
+`.claude/extensions/pstack.md` first: it lists the hard stops and the
+add-on gates. The review gates are in `.claude/extensions/review/gates.md`;
+they stop at Ezra's review and never merge. Codex, where it is available,
+is a pstack subagent (`.claude/agents/codex.md`). `AGENTS.md` points Codex
+back at this file — keep repo guidance here.
+
+This repository is public on GitHub: never commit keys, tokens, internal
+hostnames or customer data, in code, examples or screenshots.
 
 ## Blast-radius rules
 
@@ -38,15 +45,9 @@ available it takes most of the load; otherwise work in Claude as usual.
   don't ship untested.
 - Don't deepen the `flutter_adaptive_scaffold` dependency
   (`Breakpoint.activeBreakpointOf`) — consumer apps are actively
-  migrating off it; only 2 legacy widgets still use it.
+  migrating off it; only `BulletPointText` still uses it.
 - Release = pubspec version bump (`X.Y.Z+build`) as commit
   `build: vX.Y.Z` on a `release/X.Y.Z` branch, merged to main+develop,
   bare-semver tag. Cut it with the `cut-release` skill.
 - README's MIT badge is stale — there is no LICENSE file; don't
   propagate the claim.
-
-## Pre-merge routine
-
-Before handing a PR over for review, run the `routine` skill (`/simplify`,
-`/code-review`, gates, consumer impact). It stops at the human review gate;
-never merge.
