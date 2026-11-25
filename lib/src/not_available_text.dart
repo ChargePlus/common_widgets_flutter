@@ -6,8 +6,8 @@ import 'package:material_ui/material_ui.dart';
 ///
 /// The style comes from the nearest [DefaultTextStyle], which a [Material]
 /// or a [ListTile] slot sets from [ThemeData.textTheme], so the placeholder
-/// keeps the theme font and the size of the text around it. Without a
-/// complete ambient style it falls back to [TextTheme.bodyMedium].
+/// keeps the theme font and the size of the text around it. Any field the
+/// ambient style leaves unset comes from [TextTheme.bodyMedium].
 ///
 /// ```dart
 /// ListTile(
