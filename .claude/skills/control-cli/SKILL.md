@@ -16,7 +16,7 @@ skill. This one covers the rest; read gates.md and follow it.
    depends on this checkout by path and uses the changed symbol the way
    the call sites from Consumer impact do (for a model, decode, encode and
    compare it), at the merge base and at the head. Tooling or CI
-   (`.claude/`, `.codex/`, `.github/`): run each changed hook, script or
+   (`.claude/`, `.codex/`, `.github/`, `CLAUDE.md`, `AGENTS.md`): run each changed hook, script or
    workflow step the way its caller does, parent against head, as gates.md
    says. First ask whether the run can tell fixed from broken; if it
    cannot, the verdict is `PASS+NOTES (partial: <why>)` at best.

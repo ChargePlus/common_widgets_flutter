@@ -1,6 +1,6 @@
 # common_widgets_flutter
 
-Private shared widget library (`publish_to: none`) consumed by
+Unpublished shared widget library (`publish_to: none`) consumed by
 chargeplus_customer, chargeplus_partner, and chargeplus_customer_web via
 git URL with NO ref pin — and all three consumers gitignore pubspec.lock.
 Anything merged to `main` silently reaches every app on its next
